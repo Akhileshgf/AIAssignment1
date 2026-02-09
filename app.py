@@ -8,7 +8,7 @@ from langchain_community.vectorstores import FAISS
 
 # Load environment variables
 load_dotenv()
-google_api_key = st.secrets("GOOGLE_API_KEY")
+google_api_key = st.secrets["GOOGLE_API_KEY"]
 
 # Load Gemini LLM
 client = genai.Client(api_key=google_api_key)
@@ -73,6 +73,7 @@ if prompt1:
             bot.write(f"Assistant: {response.content}")
         else:
             bot.write("Assistant: I only answer questions related to Own Funds reporting.")
+
 
 
 
