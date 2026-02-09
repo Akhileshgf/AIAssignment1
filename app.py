@@ -69,7 +69,8 @@ if prompt1:
             # Retrieve context from vector DB
             docs = retriever.get_relevant_documents(prompt1)
             context = " ".join([d.page_content for d in docs])
-            response = client.models.generate_content(model="gemini-2.5-flash", contents=f"Answer only about Own Funds. Context: {context}. Question: {prompt1}" 
+            response = client.models.generate_content(model="gemini-2.5-flash", contents=f"Answer only about Own Funds. Context: {context}. Question: {prompt1}") 
 )           bot.write(f"Assistant: {response.content}")
         else:
             bot.write("Assistant: I only answer questions related to Own Funds reporting.")
+
