@@ -2,6 +2,7 @@ import streamlit as st
 import os
 from dotenv import load_dotenv
 from google import genai
+from google.genai import types
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
@@ -73,6 +74,7 @@ if prompt1:
             bot.write(f"Assistant: {response.content}")
         else:
             bot.write("Assistant: I only answer questions related to Own Funds reporting.")
+
 
 
 
