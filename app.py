@@ -23,7 +23,7 @@ it will show them in a table and run validation checks.
 """)
 
 # --- Preload Own Funds PDF into vector DB ---
-loader = PyPDFLoader("Own_Funds_09-02-2026.pdf")  # path to your PRA Own Funds PDF
+loader = PyPDFLoader("Own Funds_09-02-2026.pdf")  # path to your PRA Own Funds PDF
 docs = loader.load()
 splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
 chunks = splitter.split_documents(docs)
@@ -73,6 +73,7 @@ if prompt1:
             bot.write(f"Assistant: {response.content}")
         else:
             bot.write("Assistant: I only answer questions related to Own Funds reporting.")
+
 
 
 
