@@ -1,0 +1,5 @@
+streamlit
+os
+google-genai
+langchain_community
+langchain.text_splitters
