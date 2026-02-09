@@ -29,7 +29,7 @@ splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
 chunks = splitter.split_documents(docs)
 
 # Use Gemini embeddings
-embeddings = client.models.embed_content(model="gemini-embedding-002", google_api_key=google_api_key)
+embeddings = client.models.embed_content(model="gemini-embedding-002", contents='PRA Guidelines')
 
 # Store in FAISS vector DB
 vectorstore = FAISS.from_documents(chunks, embeddings)
@@ -73,6 +73,7 @@ if prompt1:
             bot.write(f"Assistant: {response.content}")
         else:
             bot.write("Assistant: I only answer questions related to Own Funds reporting.")
+
 
 
 
